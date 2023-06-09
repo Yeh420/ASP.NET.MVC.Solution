@@ -137,6 +137,9 @@
     <Compile Include="Models\EFModels\AppDbContext.cs" />
     <Compile Include="Models\EFModels\Category.cs" />
     <Compile Include="Models\EFModels\Product.cs" />
+    <Compile Include="Models\ViewModels\ProdcutIndexVM.cs" />
+    <Compile Include="Models\ViewModels\ProductCreateVM.cs" />
+    <Compile Include="Models\ViewModels\ProductEditVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -198,7 +201,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\ViewModels\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
