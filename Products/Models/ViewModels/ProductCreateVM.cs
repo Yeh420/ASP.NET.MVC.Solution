@@ -12,6 +12,7 @@ namespace Products.Models.ViewModels
 
 		public int CategoryId { get; set; }
 
+		[Display(Name = "商品名稱")]
 		[Required]
 		[StringLength(50)]
 		public string Name { get; set; }

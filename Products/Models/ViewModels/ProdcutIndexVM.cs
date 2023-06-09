@@ -11,24 +11,34 @@ namespace Products.Models.ViewModels
 		public int Id { get; set; }
 
 		//public int CategoryId { get; set; }
+		[Display(Name="商品分類")]
 		public string CategoryName { get; set; }
 
-		[Required]
-		[StringLength(50)]
+		[Display(Name = "商品名稱")]
 		public string Name { get; set; }
 
-		[Required]
-		[StringLength(3000)]
 		public string Description { get; set; }
 
+		[Display(Name = "描述")]
+		public string DescriptionText { get
+			{
+				return Description.Length >= 15 ? Description.Substring(0,15)+"...": Description;
+			}
+		}
+
+		[Display(Name = "售價")]
+		[DisplayFormat(DataFormatString ="{0:#,#}")]
 		public int Price { get; set; }
 
 		public bool Status { get; set; }
 
-		//[Required]
-		//[StringLength(70)]
-		//public string ProductImage { get; set; }
+		[Display(Name = "是否上架")]
+		public string StatusText { get {
+				return Status? "上架中" : "已下架";
+			} }
 
+		[Display(Name = "庫存量")]
+		[DisplayFormat(DataFormatString = "{0:#,#}")]
 		public int Stock { get; set; }
 
 	}

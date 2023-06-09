@@ -1,7 +1,10 @@
 # ASP.NET.MVC.Solution
 
 [V]create view model classes
-[working on]在index(), 將資料轉成ProductVM
-[working on]修改NavBar, add '商品'
+[V]在index(), 將資料轉成ProductVM
+[V]修改NavBar, add '商品'
+[working on]修改 ProductIndexVM
+	增加Display
+	描述截斷,只留前10個字
 []Search function
 []Create/Edit form要加 DropDown, Checkbox
