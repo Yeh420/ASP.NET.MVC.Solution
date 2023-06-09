@@ -140,6 +140,7 @@
     <Compile Include="Models\ViewModels\ProdcutIndexVM.cs" />
     <Compile Include="Models\ViewModels\ProductCreateVM.cs" />
     <Compile Include="Models\ViewModels\ProductEditVM.cs" />
+    <Compile Include="Models\ViewModels\ProductExts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

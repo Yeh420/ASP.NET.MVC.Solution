@@ -7,6 +7,7 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Products.Models.EFModels;
+using Products.Models.ViewModels;
 
 namespace Products.Controllers
 {
@@ -17,8 +18,8 @@ namespace Products.Controllers
         // GET: Products
         public ActionResult Index()
         {
-            var products = db.Products.Include(p => p.Category);
-            return View(products.ToList());
+            var products = db.Products.Include(p => p.Category).ToList().Select(p => p.ToIndexVM());
+            return View(products);
         }
 
         // GET: Products/Details/5
@@ -68,7 +69,7 @@ namespace Products.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Product product = db.Products.Find(id);
+            var product = db.Products.Find(id).ToEditVM();
             if (product == null)
             {
                 return HttpNotFound();

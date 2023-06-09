@@ -11,7 +11,7 @@ namespace Products.Models.ViewModels
 		public int Id { get; set; }
 
 		//public int CategoryId { get; set; }
-		public int CategoryName { get; set; }
+		public string CategoryName { get; set; }
 
 		[Required]
 		[StringLength(50)]
@@ -32,4 +32,5 @@ namespace Products.Models.ViewModels
 		public int Stock { get; set; }
 
 	}
+
 }

@@ -22,5 +22,7 @@ namespace Products.Models.EFModels
 				.WithRequired(e => e.Category)
 				.WillCascadeOnDelete(false);
 		}
-	}
+
+        public System.Data.Entity.DbSet<Products.Models.ViewModels.ProdcutIndexVM> ProdcutIndexVMs { get; set; }
+    }
 }
