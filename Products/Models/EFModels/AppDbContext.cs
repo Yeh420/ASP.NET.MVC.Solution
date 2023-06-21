@@ -24,5 +24,9 @@ namespace Products.Models.EFModels
 		}
 
         public System.Data.Entity.DbSet<Products.Models.ViewModels.ProdcutIndexVM> ProdcutIndexVMs { get; set; }
+
+        public System.Data.Entity.DbSet<Products.Models.ViewModels.ProductEditVM> ProductEditVMs { get; set; }
+
+        public System.Data.Entity.DbSet<Products.Models.ViewModels.ProductImageEditVM> ProductImageEditVMs { get; set; }
     }
 }

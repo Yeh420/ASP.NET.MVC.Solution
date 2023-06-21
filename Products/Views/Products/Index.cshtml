@@ -2,6 +2,9 @@
 
 @{
     ViewBag.Title = "Index";
+    var categories = ViewBag.CategoryId as SelectList;
+    var criteria = ViewBag.Criteria as Products.Models.ViewModels.ProductCriteria;
+    string s_categoryId = criteria.CategoryId.HasValue ? criteria.CategoryId.Value.ToString() : "";
 }
 
 <h2>Index</h2>
@@ -9,6 +12,38 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
+
+<section class="container">
+    <form method="get">
+        <div class="row">
+            <div class="mb-3 col-md-3">
+                <label for="s_name">商品名稱</label>
+                <input type="text" class="form-control" name="name" id="s_name" value="@criteria.Name">
+
+            </div>
+            <div class="mb-3 col-md-3">
+                <label for="s_categoryId">商品分類</label>
+                <select name="categoryId" id="s_categoryId" class="form-select">
+                    @foreach (var item in categories)
+            {
+                <option value="@item.Value" @(s_categoryId == item.Value?"selected":"")>@item.Text</option>
+            }
+                </select>
+
+            </div>
+            <div class="mb-3 col-md-4">
+                <label for="s_minPrice" style="display: block">金額</label>
+                <input type="number" class="form-control" name="minPrice" id="s_minPrice" style="width: 40%; display: inline" value="@criteria.MinPrice"> ~
+                <input type="number" class="form-control" name="maxPrice" id="s_maxPrice" style="width: 40%; display: inline" value="@criteria.MaxPrice">
+
+            </div>
+            <div class="mb-3 col-md-2 align-self-end">
+                <button class="btn btn-primary">Search</button>
+            </div>
+        </div>
+    </form>
+</section>
+
 <table class="table">
     <tr>
         <th>
@@ -55,6 +90,7 @@
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
             @Html.ActionLink("Details", "Details", new { id=item.Id }) |
+            @Html.ActionLink("ImageEdit", "ImageEdit", new { id=item.Id }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Id })
         </td>
     </tr>

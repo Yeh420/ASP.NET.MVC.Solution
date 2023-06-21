@@ -139,8 +139,10 @@
     <Compile Include="Models\EFModels\Product.cs" />
     <Compile Include="Models\ViewModels\ProdcutIndexVM.cs" />
     <Compile Include="Models\ViewModels\ProductCreateVM.cs" />
+    <Compile Include="Models\ViewModels\ProductCriteria.cs" />
     <Compile Include="Models\ViewModels\ProductEditVM.cs" />
     <Compile Include="Models\ViewModels\ProductExts.cs" />
+    <Compile Include="Models\ViewModels\ProductImageEditVM.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,9 +201,11 @@
     <Content Include="Views\Products\Details.cshtml" />
     <Content Include="Views\Products\Edit.cshtml" />
     <Content Include="Views\Products\Index.cshtml" />
+    <Content Include="Views\Products\ImageEdit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Uploads\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />
